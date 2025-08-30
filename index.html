@@ -4,28 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>📚 My Study Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0f4f7; }
-header { background: linear-gradient(90deg,#27ae60,#2980b9); color:white; padding:30px 0; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.2);}
-header h1 { margin:0; font-size:36px; display:inline-block; vertical-align:middle; }
+body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f0f4f7; scroll-behavior:smooth; }
+header { background: linear-gradient(90deg,#27ae60,#2980b9); color:white; padding:40px 0; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+header h1 { margin:0; font-size:36px; display:inline-block; vertical-align:middle; transition: transform 0.3s; }
+header h1:hover { transform: scale(1.05); }
 header p { margin:5px 0 0; font-size:18px; }
-nav { background:#34495e; display:flex; justify-content:center; flex-wrap:wrap; }
-nav a { color:white; padding:12px 20px; text-decoration:none; font-weight:bold; }
-nav a:hover { background:#27ae60; border-radius:5px; }
+
+nav { background:#34495e; display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
+nav a { color:white; padding:15px 25px; text-decoration:none; font-weight:bold; transition: all 0.3s; }
+nav a:hover { background:#27ae60; color:white; border-radius:8px; transform: scale(1.1); }
+
 .container { max-width:1000px; margin:auto; padding:20px; }
-.card { padding:20px; margin:20px 0; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.1); color:white; }
+
+.card { padding:25px; margin:25px 0; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.15); color:white; transition: transform 0.3s, box-shadow 0.3s; }
 .card:nth-child(odd) { background:#27ae60; }
 .card:nth-child(even) { background:#2980b9; }
-.card h2 { margin-top:0; }
-a { color:white; text-decoration:underline; font-weight:bold; }
-a:hover { color:#f1c40f; }
-.contact { text-align:center; margin:30px 0; font-size:18px; }
-footer { background:#2c3e50; color:white; padding:20px; text-align:center; position:relative; }
-footer a { color:#f1c40f; text-decoration:none; margin:0 10px; }
-footer a:hover { text-decoration:underline; }
-#back-to-top { position:fixed; bottom:20px; right:20px; background:#27ae60; color:white; padding:10px 15px; border-radius:50%; text-decoration:none; font-weight:bold; display:none; }
-input[type="text"] { width:100%; padding:10px; margin:10px 0 20px 0; border-radius:8px; border:1px solid #ccc; }
+.card:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
+.card h2 { margin-top:0; font-size:24px; }
 
+a { color:white; text-decoration:underline; font-weight:bold; transition: color 0.3s; }
+a:hover { color:#f1c40f; }
+
+.contact { text-align:center; margin:30px 0; font-size:18px; }
+
+footer { background:#2c3e50; color:white; padding:25px; text-align:center; position:relative; }
+footer a { color:#f1c40f; text-decoration:none; margin:0 10px; transition: color 0.3s; }
+footer a:hover { text-decoration:underline; color:#f39c12; }
+
+#back-to-top { position:fixed; bottom:20px; right:20px; background:#27ae60; color:white; padding:12px 16px; border-radius:50%; text-decoration:none; font-weight:bold; display:none; box-shadow:0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s; }
+#back-to-top:hover { transform: scale(1.2); }
+
+input[type="text"] { width:100%; padding:12px; margin:10px 0 20px 0; border-radius:10px; border:1px solid #ccc; font-size:16px; }
+
+@media (max-width:600px) { nav { flex-direction:column; } nav a { padding:10px; margin:5px 0; } }
 </style>
 <script>
 function filterNotes() {
