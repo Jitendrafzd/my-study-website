@@ -5,25 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>📚 My Study Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#f0f4f7; scroll-behavior:smooth; }
-header { background: linear-gradient(90deg,#27ae60,#2980b9); color:white; padding:40px 0; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#e0e5ec; scroll-behavior:smooth; }
+header { background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; padding:40px 0; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2);}
 header h1 { margin:0; font-size:36px; display:inline-block; vertical-align:middle; transition: transform 0.3s; }
 header h1:hover { transform: scale(1.05); }
 header p { margin:5px 0 0; font-size:18px; }
 
 nav { background:#34495e; display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
-nav a { color:white; padding:15px 25px; text-decoration:none; font-weight:bold; transition: all 0.3s; }
-nav a:hover { background:#27ae60; color:white; border-radius:8px; transform: scale(1.1); }
+nav a { color:white; padding:15px 25px; text-decoration:none; font-weight:bold; transition: all 0.3s; border-radius:8px; margin:5px; }
+nav a:hover { background:#27ae60; color:white; transform: scale(1.1); }
 
-.container { max-width:1000px; margin:auto; padding:20px; }
+.container { max-width:1100px; margin:auto; padding:20px; }
 
-.card { padding:25px; margin:25px 0; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.15); color:white; transition: transform 0.3s, box-shadow 0.3s; }
-.card:nth-child(odd) { background:#27ae60; }
-.card:nth-child(even) { background:#2980b9; }
-.card:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.25); }
-.card h2 { margin-top:0; font-size:24px; }
+/* Card Styles */
+.card { padding:25px; margin:25px 0; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.15); color:white; transition: transform 0.4s, box-shadow 0.4s; position:relative; overflow:hidden; }
+.card:hover { transform: translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
+.card::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px; opacity:0.2; z-index:0; }
 
+.card:nth-child(odd)::before { background: linear-gradient(45deg,#ff416c,#ff4b2b); }
+.card:nth-child(even)::before { background: linear-gradient(45deg,#1fa2ff,#12d8fa); }
+
+.card h2 { margin-top:0; position:relative; z-index:1; display:flex; align-items:center; }
+.card h2 i { margin-right:10px; font-size:28px; }
+
+.card p, .card ul, .card a { position:relative; z-index:1; }
 a { color:white; text-decoration:underline; font-weight:bold; transition: color 0.3s; }
 a:hover { color:#f1c40f; }
 
@@ -62,10 +69,10 @@ window.onscroll = function() {
 </header>
 
 <nav>
-  <a href="#notes">Notes</a>
-  <a href="#mcq">MCQ</a>
-  <a href="#resources">Resources</a>
-  <a href="#contact">Contact</a>
+  <a href="#notes"><i class="fas fa-book"></i> Notes</a>
+  <a href="#mcq"><i class="fas fa-question-circle"></i> MCQ</a>
+  <a href="#resources"><i class="fas fa-folder-open"></i> Resources</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
 <div class="container">
@@ -75,41 +82,41 @@ window.onscroll = function() {
 
   <!-- Notes Section -->
   <div id="notes" class="card">
-    <h2>📝 Notes Section</h2>
+    <h2><i class="fas fa-sticky-note"></i> Notes Section</h2>
     <div class="note-item">
         <h3>Data Structures</h3>
-        <p><a href="datastructures.pdf" target="_blank">📘 Download PDF</a></p>
+        <p><a href="datastructures.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a></p>
     </div>
     <div class="note-item">
         <h3>Algorithms</h3>
-        <p><a href="algorithms.pdf" target="_blank">📗 Download PDF</a></p>
+        <p><a href="algorithms.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a></p>
     </div>
     <div class="note-item">
         <h3>Operating System</h3>
-        <p><a href="os.pdf" target="_blank">📕 Download PDF</a></p>
+        <p><a href="os.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a></p>
     </div>
-    <p><a href="study_notes.zip" target="_blank">⬇ Download All Notes (ZIP)</a></p>
+    <p><a href="study_notes.zip" target="_blank"><i class="fas fa-download"></i> Download All Notes (ZIP)</a></p>
   </div>
 
   <!-- MCQ Section -->
   <div id="mcq" class="card">
-    <h2>❓ MCQ Practice</h2>
-    <p><a href="mcq.pdf" target="_blank">👉 Download MCQ PDF</a></p>
+    <h2><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+    <p><a href="mcq.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download MCQ PDF</a></p>
   </div>
 
   <!-- Resources Section -->
   <div id="resources" class="card">
-    <h2>📂 Resources</h2>
-    <p><a href="notes.pdf" target="_blank">📘 Download Notes PDF</a></p>
-    <p><a href="https://www.geeksforgeeks.org/" target="_blank">🌐 GeeksforGeeks (Coding Resources)</a></p>
-    <p><a href="https://www.javatpoint.com/" target="_blank">🌐 JavaTpoint (Programming Tutorials)</a></p>
+    <h2><i class="fas fa-folder-open"></i> Resources</h2>
+    <p><a href="notes.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download Notes PDF</a></p>
+    <p><a href="https://www.geeksforgeeks.org/" target="_blank"><i class="fas fa-globe"></i> GeeksforGeeks</a></p>
+    <p><a href="https://www.javatpoint.com/" target="_blank"><i class="fas fa-globe"></i> JavaTpoint</a></p>
   </div>
 
   <!-- Contact -->
   <div id="contact" class="contact card">
-    <h2>📞 Contact</h2>
+    <h2><i class="fas fa-phone"></i> Contact</h2>
     <p>Mobile: <strong>9140979792</strong></p>
-    <p>Email: <a href="mailto:jitendrafzd16@gmail.com">jitendrafzd16@gmail.com</a></p>
+    <p>Email: <a href="mailto:jitendrafzd16@gmail.com"><i class="fas fa-envelope"></i> jitendrafzd16@gmail.com</a></p>
   </div>
 
 </div>
@@ -117,13 +124,13 @@ window.onscroll = function() {
 <footer>
   <p>© 2025 Jitendra's Study Website | All Rights Reserved</p>
   <p>
-    <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-    <a href="https://www.instagram.com" target="_blank">Instagram</a> |
-    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
   </p>
 </footer>
 
-<a href="#top" id="back-to-top">⬆</a>
+<a href="#top" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
 </body>
 </html>
