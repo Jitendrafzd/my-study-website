@@ -4,40 +4,59 @@
   <meta charset="UTF-8">
   <title>📚 My Study Website</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background: #eef2f7; }
-    h1 { color: darkblue; text-align: center; }
-    .card { background: white; padding: 15px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    a { color: darkgreen; text-decoration: none; font-weight: bold; }
+    body { font-family: Arial, sans-serif; margin: 0; background: #eef2f7; }
+    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+    h1 { margin: 0; font-size: 32px; }
+    .container { padding: 20px; max-width: 900px; margin: auto; }
+    .card { background: white; padding: 20px; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    h2 { color: #2c3e50; }
+    a { color: #27ae60; text-decoration: none; font-weight: bold; }
     a:hover { text-decoration: underline; }
-    .contact { text-align: center; margin-top: 30px; font-size: 18px; }
+    .contact { text-align: center; margin: 30px 0; font-size: 18px; }
+    footer { background: #2c3e50; color: white; padding: 10px; text-align: center; }
   </style>
 </head>
 <body>
-  <h1>📖 My Study Website</h1>
+  <header>
+    <h1>📖 My Study Website</h1>
+    <p>Learning Made Easy</p>
+  </header>
 
-  <div class="card">
-    <h2>📝 Notes Section</h2>
-    <p>यहाँ पर आप अपने important notes देख सकते हैं:</p>
-    <ul>
-      <li><a href="ds.html">📘 Data Structures</a></li>
-      <li><a href="algo.html">📗 Algorithms</a></li>
-      <li><a href="os.html">📙 Operating System</a></li>
-    </ul>
+  <div class="container">
+    <!-- Notes Section -->
+    <div class="card">
+      <h2>📝 Notes Section</h2>
+      <p>यहाँ पर आप अपने important notes देख सकते हैं:</p>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1n4rL4Gn8o7W2y2d7tnh7aJ5t4JxYkE3x/view" target="_blank">📘 Data Structures Notes (PDF)</a></li>
+        <li><a href="https://drive.google.com/file/d/1QbKnN1WGl4O1Ax2kKJ9eE8cprWgO1z8v/view" target="_blank">📘 Algorithms Notes (PDF)</a></li>
+        <li><a href="https://drive.google.com/file/d/1NfdhJzRz7QZtLMShNw0PQ7bhgzNf-2sR/view" target="_blank">📘 Operating System Notes (PDF)</a></li>
+      </ul>
+    </div>
+
+    <!-- MCQ Section -->
+    <div class="card">
+      <h2>❓ MCQ Practice</h2>
+      <p><a href="mcq.pdf" target="_blank">👉 Download MCQ PDF</a></p>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="card">
+      <h2>📂 Resources</h2>
+      <p><a href="notes.pdf" target="_blank">📘 Download Notes PDF</a></p>
+      <p><a href="https://www.geeksforgeeks.org/" target="_blank">🌐 GeeksforGeeks (Coding Resources)</a></p>
+      <p><a href="https://www.javatpoint.com/" target="_blank">🌐 JavaTpoint (Programming Tutorials)</a></p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact">
+      <p>📞 Mobile: <strong>9140979792</strong></p>
+      <p>📧 Email: <a href="mailto:jitendrafzd16@gmail.com">jitendrafzd16@gmail.com</a></p>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>❓ MCQ Practice</h2>
-    <p><a href="mcq.pdf">👉 Download MCQ PDF</a></p>
-  </div>
-
-  <div class="card">
-    <h2>📂 Resources</h2>
-    <p><a href="notes.pdf">📘 Download Notes PDF</a></p>
-  </div>
-
-  <div class="contact">
-    <p>📞 Mobile: <strong>9140979792</strong></p>
-    <p>📧 Email: <a href="mailto:jitendrafzd16@gmail.com">jitendrafzd16@gmail.com</a></p>
-  </div>
+  <footer>
+    <p>© 2025 Jitendra's Study Website | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
