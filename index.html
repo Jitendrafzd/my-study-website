@@ -4,130 +4,57 @@
   <meta charset="UTF-8">
   <title>📚 My Study Website</title>
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 1px;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
-
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; }
+    header { background: #2c3e50; padding: 20px; color: white; text-align: center; }
+    h1 { margin: 0; }
+    .container { width: 80%; margin: auto; padding: 20px; }
     .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: white; padding: 20px; margin: 20px 0;
+      border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .card h2 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-
-    .card ul {
-      margin-left: 20px;
-    }
-
-    a {
-      color: #16a085;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #e74c3c;
-      text-decoration: underline;
-    }
-
-    .contact {
-      text-align: center;
-      margin: 40px 0 20px;
-      padding: 20px;
-      background: #2c3e50;
-      color: white;
-      border-radius: 12px;
-    }
-
-    .contact p {
-      margin: 8px 0;
-      font-size: 18px;
-    }
-
+    h2 { color: #2c3e50; }
+    a { color: #2980b9; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
     footer {
-      text-align: center;
-      padding: 15px;
-      background: #1a252f;
-      color: #ccc;
-      font-size: 14px;
+      background: #2c3e50; color: white; text-align: center;
+      padding: 15px; margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>📚 My Study Website</h1>
-    <p>Learn • Practice • Grow</p>
-  </header>
+<header>
+  <h1>📖 My Study Website</h1>
+  <p>Study Materials | Notes | Practice</p>
+</header>
 
-  <div class="container">
-    <div class="card">
-      <h2>📝 Notes Section</h2>
-      <p>यहाँ पर आप अपने important notes देख सकते हैं:</p>
-      <ul>
-        <li>Data Structures</li>
-        <li>Algorithms</li>
-        <li>Operating System</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>❓ MCQ Practice</h2>
-      <p><a href="mcq.pdf">👉 MCQ PDF डाउनलोड करें</a></p>
-    </div>
-
-    <div class="card">
-      <h2>📂 Resources</h2>
-      <p><a href="notes.pdf">📘 Notes PDF डाउनलोड करें</a></p>
-    </div>
+<div class="container">
+  <div class="card">
+    <h2>📝 Notes Section</h2>
+    <p>यहाँ पर आप अपने important notes देख सकते हैं:</p>
+    <ul>
+      <li><a href="ds.html">📘 Data Structures</a></li>
+      <li><a href="algo.html">⚡ Algorithms</a></li>
+      <li><a href="os.html">💻 Operating System</a></li>
+    </ul>
   </div>
 
-  <div class="contact">
-    <p>📞 Mobile: <strong>9140979792</strong></p>
-    <p>📧 Email: <a href="mailto:jitendrafzd16@gmail.com">jitendrafzd16@gmail.com</a></p>
+  <div class="card">
+    <h2>❓ MCQ Practice</h2>
+    <p><a href="mcq.pdf">👉 Download MCQ PDF</a></p>
   </div>
 
-  <footer>
-    <p>© 2025 My Study Website | Designed by Jitendra</p>
-  </footer>
+  <div class="card">
+    <h2>📂 Resources</h2>
+    <p><a href="notes.pdf">📘 Download Notes PDF</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>📞 Mobile: <strong>9140979792</strong> | 📧 
+     <a href="mailto:jitendrafzd16@gmail.com" style="color:white;">jitendrafzd16@gmail.com</a>
+  </p>
+</footer>
+
 </body>
 </html>
-
