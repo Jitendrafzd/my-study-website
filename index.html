@@ -13,34 +13,33 @@
   --text-light: #333;
   --text-dark: #f5f5f5;
 }
-
 body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background: var(--bg-light); color: var(--text-light); scroll-behavior: smooth; transition: background 0.5s, color 0.5s; }
-
-header { background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; padding:40px 0 20px 0; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+header { background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; padding:40px 0; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
 header h1 { margin:0; font-size:36px; display:inline-block; transition: transform 0.3s; }
 header h1:hover { transform: scale(1.05); }
 header p { margin:5px 0 0; font-size:18px; }
-
-/* Slider */
-.slider { position: relative; width: 100%; max-height: 300px; overflow: hidden; border-radius: 15px; margin: 20px auto; }
-.slides { display: flex; width: 300%; animation: slide 12s infinite; }
-.slides img { width: 100%; flex-shrink: 0; object-fit: cover; }
-@keyframes slide { 0%{transform:translateX(0%);} 33%{transform:translateX(-100%);} 66%{transform:translateX(-200%);} 100%{transform:translateX(0%);} }
-
 nav { background:#34495e; display:flex; justify-content:center; flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
 nav a { color:white; padding:15px 25px; text-decoration:none; font-weight:bold; transition: all 0.3s; border-radius:8px; margin:5px; }
 nav a:hover { background:#27ae60; transform: scale(1.1); }
-
 .container { max-width:1100px; margin:auto; padding:20px; }
 
+/* Slider Styles */
+.slider { position: relative; width: 100%; max-height: 350px; overflow: hidden; border-radius: 15px; margin: 20px auto; }
+.slides { display: flex; transition: transform 1.5s ease-in-out; }
+.slide { min-width: 100%; position: relative; display:none; }
+.slide img { width: 100%; height: 350px; object-fit: cover; }
+.caption { position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.6); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 18px; }
+.prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 12px; margin-top: -22px; color: white; font-weight: bold; font-size: 24px; border-radius: 0 3px 3px 0; background: rgba(0,0,0,0.5); user-select: none; transition: 0.3s; }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
+/* Card Styles */
 .card { padding:25px; margin:25px 0; border-radius:20px; color:white; transition: transform 0.4s, box-shadow 0.4s; position:relative; overflow:hidden; }
 .card:hover { transform: translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
-
 .card::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px; opacity:0.9; z-index:0; animation: gradientBG 10s ease infinite; background-size: 400% 400%; }
 .card:nth-child(odd)::before { background: linear-gradient(-45deg,#ff416c,#ff4b2b,#ffec61,#ff6b6b); }
 .card:nth-child(even)::before { background: linear-gradient(45deg,#1fa2ff,#12d8fa,#0fffc0,#1fa2ff); }
-@keyframes gradientBG { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
-
+@keyframes gradientBG { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
 .card h2 { margin-top:0; position:relative; z-index:1; display:flex; align-items:center; }
 .card h2 i { margin-right:10px; font-size:28px; }
 .card p, .card ul, .card a { position:relative; z-index:1; }
@@ -48,7 +47,6 @@ a { color:white; text-decoration:underline; font-weight:bold; transition: color 
 a:hover { color:#f1c40f; }
 
 .contact { text-align:center; margin:30px 0; font-size:18px; }
-
 footer { background:#2c3e50; color:white; padding:25px; text-align:center; position:relative; }
 footer a { color:#f1c40f; text-decoration:none; margin:0 10px; transition: color 0.3s; }
 footer a:hover { text-decoration:underline; color:#f39c12; }
@@ -67,24 +65,40 @@ body.dark-mode footer { background:#111; }
 body.dark-mode input[type="text"] { background:#333; color:white; border:1px solid #555; }
 
 @media (max-width:600px) { nav { flex-direction:column; } nav a { padding:10px; margin:5px 0; } }
-
 </style>
 <script>
+let slideIndex = 0;
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // slow slide: 5 sec
+}
+function plusSlides(n) {
+  slideIndex += n - 1; 
+  showSlides();
+}
+
 function filterNotes() {
     let input = document.getElementById('search').value.toLowerCase();
     let cards = document.getElementsByClassName('note-item');
-    for (let i=0;i<cards.length;i++){
+    for (let i = 0; i < cards.length; i++) {
         let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
         cards[i].style.display = title.includes(input) ? '' : 'none';
     }
 }
+
 window.onscroll = function() {
-    document.getElementById('back-to-top').style.display = (document.body.scrollTop>200 || document.documentElement.scrollTop>200)?'block':'none';
+    document.getElementById('back-to-top').style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? 'block' : 'none';
 }
-function toggleMode(){ document.body.classList.toggle('dark-mode'); }
+function toggleMode() {
+    document.body.classList.toggle('dark-mode');
+}
 </script>
 </head>
-<body>
+<body onload="showSlides()">
 
 <button class="toggle-mode" onclick="toggleMode()">🌙 Dark/Light Mode</button>
 
@@ -92,15 +106,6 @@ function toggleMode(){ document.body.classList.toggle('dark-mode'); }
   <h1>📖 My Study Website</h1>
   <p>Learning Made Easy | Study Smarter, Not Harder</p>
 </header>
-
-<!-- Slider -->
-<div class="slider">
-  <div class="slides">
-    <img src="slider1.jpg" alt="Study Motivation 1">
-    <img src="slider2.jpg" alt="Study Motivation 2">
-    <img src="slider3.jpg" alt="Study Motivation 3">
-  </div>
-</div>
 
 <nav>
   <a href="#notes"><i class="fas fa-book"></i> Notes</a>
@@ -110,6 +115,27 @@ function toggleMode(){ document.body.classList.toggle('dark-mode'); }
 </nav>
 
 <div class="container">
+
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="slider1.jpg" alt="Study Motivation 1">
+        <div class="caption">Stay Focused and Achieve More</div>
+      </div>
+      <div class="slide">
+        <img src="slider2.jpg" alt="Study Motivation 2">
+        <div class="caption">Organize Your Notes Efficiently</div>
+      </div>
+      <div class="slide">
+        <img src="slider3.jpg" alt="Study Motivation 3">
+        <div class="caption">Learn Smart, Not Hard</div>
+      </div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
   <input type="text" id="search" onkeyup="filterNotes()" placeholder="Search Notes...">
 
   <div id="notes" class="card">
@@ -146,6 +172,7 @@ function toggleMode(){ document.body.classList.toggle('dark-mode'); }
     <p>Mobile: <strong>9140979792</strong></p>
     <p>Email: <a href="mailto:jitendrafzd16@gmail.com"><i class="fas fa-envelope"></i> jitendrafzd16@gmail.com</a></p>
   </div>
+
 </div>
 
 <footer>
