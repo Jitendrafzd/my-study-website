@@ -1,124 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyStudyLife - Student Productivity Tool</title>
+  <title>📚 My Study Website</title>
   <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
       line-height: 1.6;
     }
+
     header {
-      background: #4CAF50;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header nav a {
+      background: #2c3e50;
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-    }
-    .hero {
-      background: #f4f4f4;
-      padding: 50px;
+      padding: 25px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    .hero h1 {
-      font-size: 2.5em;
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
     }
-    .btn-primary {
-      background: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-size: 1em;
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
     }
-    section {
-      padding: 40px 20px;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 2em;
-      color: #333;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
+
+    .card {
+      background: white;
       padding: 20px;
-      margin-top: 40px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      margin-left: 20px;
+    }
+
+    a {
+      color: #16a085;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #e74c3c;
+      text-decoration: underline;
+    }
+
+    .contact {
+      text-align: center;
+      margin: 40px 0 20px;
+      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      border-radius: 12px;
+    }
+
+    .contact p {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #1a252f;
+      color: #ccc;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h2>MyStudyLife</h2>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">App Tour</a>
-      <a href="#">About</a>
-      <a href="#">Study Tips</a>
-      <a href="#">Sign Up</a>
-      <a href="#">Log in</a>
-    </nav>
+    <h1>📚 My Study Website</h1>
+    <p>Learn • Practice • Grow</p>
   </header>
 
-  <section class="hero">
-    <h1>The Ultimate Student Productivity Tool</h1>
-    <p>Most students struggle with procrastination, missed deadlines, and academic stress – MyStudyLife is here to change that.</p>
-    <button class="btn-primary">Get started for free</button>
-  </section>
+  <div class="container">
+    <div class="card">
+      <h2>📝 Notes Section</h2>
+      <p>यहाँ पर आप अपने important notes देख सकते हैं:</p>
+      <ul>
+        <li>Data Structures</li>
+        <li>Algorithms</li>
+        <li>Operating System</li>
+      </ul>
+    </div>
 
-  <section>
-    <h2 class="section-title">The MyStudyLife Productivity Method</h2>
-    <p><b>Get Organized:</b> Structure your schedule with smart task management and reminders.</p>
-    <p><b>Stay Ahead:</b> Sync everything across web, mobile, and tablet.</p>
-    <p><b>Work Productively:</b> Use tools like the Pomodoro timer to stay focused.</p>
-  </section>
+    <div class="card">
+      <h2>❓ MCQ Practice</h2>
+      <p><a href="mcq.pdf">👉 MCQ PDF डाउनलोड करें</a></p>
+    </div>
 
-  <section>
-    <h2 class="section-title">Everything for school, in one place</h2>
-    <p>Goodbye Chaos. Hello Control. Stop bouncing between calendars, reminders, and task apps.</p>
-  </section>
+    <div class="card">
+      <h2>📂 Resources</h2>
+      <p><a href="notes.pdf">📘 Notes PDF डाउनलोड करें</a></p>
+    </div>
+  </div>
 
-  <section>
-    <h2 class="section-title">For Parents & Educators</h2>
-    <p><b>Parents:</b> Stay involved in your child’s school life with Family Connect.</p>
-    <p><b>Educators:</b> Streamline planning, boost independence, and integrate with LMS.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">MyStudyLife+</h2>
-    <p>Upgrade to premium with advanced grade tracking, personalization, and AI schedule scan.</p>
-    <button class="btn-primary">Get Started</button>
-  </section>
-
-  <section>
-    <h2 class="section-title">Real Students - Real Results</h2>
-    <p>Join 24 million students worldwide who are transforming their academic lives with MyStudyLife.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p><b>What is MyStudyLife?</b> A smart planner for students to manage tasks, exams, and schedules in one place.</p>
-    <p><b>Can I use MyStudyLife for rotating timetables?</b> Yes, with smart scheduling.</p>
-    <p><b>Will I get reminders?</b> Yes, reminders for tasks, exams, and deadlines.</p>
-  </section>
+  <div class="contact">
+    <p>📞 Mobile: <strong>9140979792</strong></p>
+    <p>📧 Email: <a href="mailto:jitendrafzd16@gmail.com">jitendrafzd16@gmail.com</a></p>
+  </div>
 
   <footer>
-    <p>© 2025 MyStudyLife. All rights reserved.</p>
-    <p>Contact | Privacy | T&Cs</p>
+    <p>© 2025 My Study Website | Designed by Jitendra</p>
   </footer>
 
 </body>
