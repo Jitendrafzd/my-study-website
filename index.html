@@ -16,10 +16,13 @@
 
 body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background: var(--bg-light); color: var(--text-light); scroll-behavior: smooth; transition: background 0.5s, color 0.5s; }
 
-header { background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; padding:40px 0 20px 0; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
-header h1 { margin:0; font-size:36px; display:inline-block; transition: transform 0.3s; }
-header h1:hover { transform: scale(1.05); }
-header p { margin:5px 0 0; font-size:18px; }
+header { background: linear-gradient(135deg,#6a11cb,#2575fc); color:white; padding:20px 0; box-shadow:0 6px 15px rgba(0,0,0,0.2); }
+.header-content { display:flex; align-items:center; justify-content:center; gap:15px; flex-wrap:wrap; }
+.site-logo { width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid white; }
+.header-text { text-align:left; }
+.header-text h1 { margin:0; font-size:36px; display:inline-block; transition: transform 0.3s; }
+.header-text h1:hover { transform: scale(1.05); }
+.header-text p { margin:5px 0 0; font-size:18px; }
 
 /* Slider */
 .slider { position: relative; width: 100%; max-height: 300px; overflow: hidden; border-radius: 15px; margin: 20px auto; }
@@ -66,8 +69,11 @@ body.dark-mode nav { background:#222; }
 body.dark-mode footer { background:#111; }
 body.dark-mode input[type="text"] { background:#333; color:white; border:1px solid #555; }
 
-@media (max-width:600px) { nav { flex-direction:column; } nav a { padding:10px; margin:5px 0; } }
-
+@media (max-width:600px) { 
+  nav { flex-direction:column; } 
+  nav a { padding:10px; margin:5px 0; } 
+  .header-content { flex-direction:column; }
+}
 </style>
 <script>
 function filterNotes() {
@@ -89,8 +95,13 @@ function toggleMode(){ document.body.classList.toggle('dark-mode'); }
 <button class="toggle-mode" onclick="toggleMode()">🌙 Dark/Light Mode</button>
 
 <header>
-  <h1>📖 My Study Website</h1>
-  <p>Learning Made Easy | Study Smarter, Not Harder</p>
+  <div class="header-content">
+    <img src="images/logo.png" alt="Logo" class="site-logo">
+    <div class="header-text">
+      <h1>📖 My Study Website</h1>
+      <p>Learning Made Easy | Study Smarter, Not Harder</p>
+    </div>
+  </div>
 </header>
 
 <!-- Slider -->
